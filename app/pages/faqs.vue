@@ -163,7 +163,7 @@ const running = [
       title="See the fit"
       body="Import your catalog, open your shop this afternoon, and judge it with your real inventory in front of you."
       :label="ctaLabel"
-      :note="ctaNoteShort"
+      :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"
     />
   </main>

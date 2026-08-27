@@ -112,7 +112,7 @@ const principles = [
       title="Try the tool"
       body="Use Fibermade for $49/month with the full platform available from day one and see what it feels like when one system understands yarn."
       :label="ctaLabel"
-      :note="ctaNoteShort"
+      :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"
     />
   </main>

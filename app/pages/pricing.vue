@@ -176,7 +176,7 @@ const billingFaqs = [
       title="Try everything"
       body="Import your catalog, open your shop, and decide with your real inventory, shows, and store relationships in front of you."
       :label="ctaLabel"
-      :note="ctaNoteShort"
+      :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"
     />
   </main>

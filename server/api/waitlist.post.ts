@@ -36,6 +36,10 @@ export default defineEventHandler(async (event) => {
         'Accept': 'application/json',
       },
       body: JSON.stringify(buildMailerLiteSubscriberPayload(data, groupId)),
+      // Bound the outbound call so a slow/hanging MailerLite doesn't tie up
+      // this request indefinitely — a timeout is just another failure mode
+      // and falls through to the same generic 502 as any other fetch error.
+      signal: AbortSignal.timeout(10_000),
     })
 
     if (!response.ok) {
