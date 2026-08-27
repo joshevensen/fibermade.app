@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { comingSoon, launchMonth } = useLaunch()
+const { open: openWaitlistModal } = useWaitlistModal()
 
 const appUrl = useRuntimeConfig().public.appUrl as string
 const loginUrl = appUrl ? `${appUrl}/login` : null
@@ -34,12 +35,13 @@ const navLinkClass =
         <span class="text-stone-300">
           Get on the launch list and be first to import your catalog.
         </span>
-        <a
-          href="#waitlist"
+        <button
+          type="button"
           class="font-semibold whitespace-nowrap text-terracotta-soft underline underline-offset-[3px] hover:text-terracotta-tint"
+          @click="openWaitlistModal"
         >
           Join the list &rarr;
-        </a>
+        </button>
       </div>
     </div>
 
