@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { comingSoon } = useLaunch()
+const { comingSoon, launchMonth } = useLaunch()
 
 const appUrl = useRuntimeConfig().public.appUrl as string
 const loginUrl = appUrl ? `${appUrl}/login` : null
@@ -30,7 +30,7 @@ const navLinkClass =
       <div
         class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-2.5 text-center text-sm/6 text-stone-50 lg:px-8"
       >
-        <span class="font-semibold">Fibermade opens September 2026.</span>
+        <span class="font-semibold">Fibermade opens {{ launchMonth }}.</span>
         <span class="text-stone-300">
           Get on the launch list and be first to import your catalog.
         </span>

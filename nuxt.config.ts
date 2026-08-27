@@ -26,6 +26,9 @@ export default defineNuxtConfig({
       // https://app.staging.fibermade.app. Set NUXT_PUBLIC_APP_URL to enable
       // the header's Log in / Sign up links — leave unset and they stay hidden.
       appUrl: '',
+      // Pre-launch copy's target month, e.g. "September 2026". Set
+      // NUXT_PUBLIC_LAUNCH_MONTH to change it without editing code.
+      launchMonth: 'September 2026',
     },
   },
 

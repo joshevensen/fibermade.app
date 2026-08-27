@@ -23,6 +23,13 @@ above the header, a "Launching September 2026" badge, and "Join the launch list"
 buttons with waitlist fine print. Turn it off and all of that reverts to the
 live wording — "Start your Fibermade shop" and the 30-day guarantee.
 
+The month itself ("September 2026") is `NUXT_PUBLIC_LAUNCH_MONTH`, so it can
+change without editing code:
+
+```bash
+NUXT_PUBLIC_LAUNCH_MONTH="October 2026" npm run generate
+```
+
 ```bash
 NUXT_PUBLIC_COMING_SOON=false npm run generate
 ```

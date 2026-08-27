@@ -6,13 +6,16 @@
  * label, and piece of fine print on the home page reverts to the live wording.
  */
 export function useLaunch() {
-  const comingSoon = computed(() => Boolean(useRuntimeConfig().public.comingSoon))
+  const config = useRuntimeConfig().public
+  const comingSoon = computed(() => Boolean(config.comingSoon))
+  const launchMonth = computed(() => config.launchMonth as string)
 
   return {
     comingSoon,
+    launchMonth,
 
     badgeText: computed(() =>
-      comingSoon.value ? 'Launching September 2026' : 'Fibermade is live',
+      comingSoon.value ? `Launching ${launchMonth.value}` : 'Fibermade is live',
     ),
 
     ctaLabel: computed(() =>
