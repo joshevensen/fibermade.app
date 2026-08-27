@@ -15,6 +15,13 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    // MailerLite API key used to add launch-list signups to a subscriber group.
+    // Server-only — never exposed to the client. The /api/waitlist route
+    // returns 503 until this is set. Set via NUXT_MAILERLITE_API_KEY.
+    mailerliteApiKey: '',
+    // MailerLite group/list ID that launch-list signups are added to.
+    // Server-only. Set via NUXT_MAILERLITE_GROUP_ID.
+    mailerliteGroupId: '',
     public: {
       // Pre-launch copy. Set NUXT_PUBLIC_COMING_SOON=false on launch day and every
       // CTA, badge, and the announcement bar revert to the live wording.

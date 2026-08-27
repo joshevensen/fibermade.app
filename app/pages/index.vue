@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { badgeText, ctaLabel, ctaNote, ctaNoteShort } = useLaunch()
+const { badgeText, ctaLabel, ctaNote, ctaNoteShort, comingSoon } = useLaunch()
 
 useSeoMeta({
   title: 'Fibermade — Commerce for hand dyers',
@@ -96,7 +96,7 @@ const origins = [
             around colorways, bases, and skeins instead of generic products and variants.
           </p>
           <div class="mt-9">
-            <CtaButton>{{ ctaLabel }}</CtaButton>
+            <CtaButton :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
             <p class="mt-4 text-[15px]/[1.6] text-stone-500">{{ ctaNote }}</p>
             <p class="mt-5 text-[15px]/[1.6]">
               <NuxtLink
@@ -178,7 +178,7 @@ const origins = [
           </li>
         </ol>
         <div class="mt-14 flex flex-wrap items-center gap-6">
-          <CtaButton>{{ ctaLabel }}</CtaButton>
+          <CtaButton :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
           <span class="text-[15px]/[1.6] text-stone-500">{{ ctaNoteShort }}</span>
         </div>
       </div>
@@ -244,6 +244,7 @@ const origins = [
       body="One plan at $49/month — shop, catalog, inventory, wholesale, shows, and in-person sales. No per-sale fees, no per-store fees, no tiers."
       :label="ctaLabel"
       :note="ctaNoteShort"
+      :waitlist="comingSoon"
     />
   </main>
 </template>

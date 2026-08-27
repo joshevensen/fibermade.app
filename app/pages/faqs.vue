@@ -5,6 +5,8 @@ useSeoMeta({
     'Switching, Square, inventory, wholesale, and shows — the questions hand dyers ask before moving their business to Fibermade.',
 })
 
+const { ctaLabel, ctaNoteShort, comingSoon } = useLaunch()
+
 const switching = [
   {
     question: 'Is Fibermade a full commerce platform?',
@@ -160,6 +162,9 @@ const running = [
     <CtaBand
       title="See the fit"
       body="Import your catalog, open your shop this afternoon, and judge it with your real inventory in front of you."
+      :label="ctaLabel"
+      :note="comingSoon ? ctaNoteShort : undefined"
+      :waitlist="comingSoon"
     />
   </main>
 </template>

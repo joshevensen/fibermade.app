@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { ctaLabel, ctaNoteShort, comingSoon } = useLaunch()
+
 useSeoMeta({
   title: 'Features — Fibermade',
   description:
@@ -99,7 +101,7 @@ const rest = [
       Catalog, storefront, inventory, wholesale, shows, and in-person sales — the whole
       business in one place, in the language the fiber community already uses.
       <template #cta>
-        <CtaButton>Start your Fibermade shop</CtaButton>
+        <CtaButton :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
         <span class="text-[15px]/[1.6] text-stone-500">
           $49/month · 30-day money-back guarantee
         </span>
@@ -225,7 +227,7 @@ const rest = [
           </IconFeature>
         </dl>
         <div class="mt-14 flex flex-wrap items-center gap-6">
-          <CtaButton>Start your Fibermade shop</CtaButton>
+          <CtaButton :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
           <span class="text-[15px]/[1.6] text-stone-500">
             Import from Shopify or Square and be open in an afternoon.
           </span>
@@ -236,7 +238,9 @@ const rest = [
     <CtaBand
       title="Work in fiber language"
       body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales."
-      note="30-day money-back guarantee, issued automatically."
+      :label="ctaLabel"
+      :note="comingSoon ? ctaNoteShort : '30-day money-back guarantee, issued automatically.'"
+      :waitlist="comingSoon"
     />
   </main>
 </template>

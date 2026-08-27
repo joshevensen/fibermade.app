@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { ctaLabel, ctaNoteShort, comingSoon } = useLaunch()
+
 useSeoMeta({
   title: 'Pricing — Fibermade',
   description:
@@ -122,9 +124,9 @@ const billingFaqs = [
                     /month
                   </span>
                 </p>
-                <CtaButton class="mt-8" block>Start your Fibermade shop</CtaButton>
+                <CtaButton class="mt-8" block :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
                 <p class="mt-3.5 text-center text-[15px]/[1.5] text-stone-600">
-                  Cancel within 30 days for a full refund.
+                  {{ comingSoon ? ctaNoteShort : 'Cancel within 30 days for a full refund.' }}
                 </p>
               </div>
             </div>
@@ -173,6 +175,9 @@ const billingFaqs = [
     <CtaBand
       title="Try everything"
       body="Import your catalog, open your shop, and decide with your real inventory, shows, and store relationships in front of you."
+      :label="ctaLabel"
+      :note="comingSoon ? ctaNoteShort : undefined"
+      :waitlist="comingSoon"
     />
   </main>
 </template>

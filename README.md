@@ -1,6 +1,6 @@
 # fibermade.app
 
-The Fibermade marketing site — a Nuxt 4 app that prerenders to static HTML.
+The Fibermade marketing site — a Nuxt 4 app, deployed as a live Node server (not static-only, since it has a server API route).
 
 Seven pages: Home, Features, Pricing, About, FAQs, Terms, Privacy.
 
@@ -13,8 +13,11 @@ npm run generate   # static build in .output/public
 npm run build      # server build in .output/server
 ```
 
-`npm run generate` prerenders every route, so the site can be deployed to any
-static host. Nothing on the site needs a server at runtime.
+`npm run build` produces the server build in `.output/server` — this is what
+must actually run at runtime (`.output/server/index.mjs`) for the site to fully
+work, including the server-only `/api/waitlist` route. `npm run generate` still
+works for static prerendering, but the static output alone is no longer
+sufficient once the launch-list signup feature is live.
 
 ## Launch day
 
@@ -46,9 +49,12 @@ runtimeConfig: {
 
 The copy for both states lives in one place: `app/composables/useLaunch.ts`.
 
-Only the home page and the header swap copy — Features, Pricing, About, and
-FAQs use the live wording either way, since pre-launch their buttons point at
-the same `#waitlist` anchor.
+Every page's primary CTAs swap copy together — while `comingSoon` is true, all
+of them read "Join the launch list" and open the launch-list signup modal
+instead of linking anywhere; turn the flag off and they all revert to today's
+live wording, "Start your Fibermade shop" — still linking to the placeholder
+`#register` anchor (a pre-existing gap unrelated to this feature; see `.env.example`
+above for how `NUXT_PUBLIC_APP_URL` wires the header's own Log in/Sign up links).
 
 ## Header Log in / Sign up links
 
@@ -60,6 +66,20 @@ environment (like production before launch) that doesn't have the app live yet.
 
 ```bash
 NUXT_PUBLIC_APP_URL=https://app.staging.fibermade.app npm run generate
+```
+
+## Launch list (MailerLite)
+
+The header announcement bar and every "Join the launch list" CTA open a modal
+that posts to a server-only `/api/waitlist` route, which adds the signup to a
+MailerLite group as an immediate opt-in (no confirmation email). Two
+server-only env vars configure it — `NUXT_MAILERLITE_API_KEY` and
+`NUXT_MAILERLITE_GROUP_ID` — neither is ever exposed to the client. Until both
+are set, the endpoint returns a 503 and the modal shows a generic error
+instead of crashing.
+
+```bash
+NUXT_MAILERLITE_API_KEY=your-key NUXT_MAILERLITE_GROUP_ID=your-group-id npm run build
 ```
 
 ## Imagery
@@ -84,15 +104,6 @@ or per image, so the finished ones render clean while the rest stay marked:
 ```
 
 The `alt` prop is the real alt text and takes over once the overlay is off.
-
-## Links that still need wiring
-
-The CTAs use the anchors from the design and do not go anywhere yet:
-
-- `#register` — every primary button, plus "Sign up" in the header
-- `#login` — the header
-- `#waitlist` — the announcement bar; currently lands on the closing band of the
-  home page. Pre-launch this wants a real email capture form.
 
 ## Structure
 

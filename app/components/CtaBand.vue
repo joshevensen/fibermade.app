@@ -5,10 +5,12 @@ withDefaults(
     body: string
     label?: string
     note?: string
+    waitlist?: boolean
   }>(),
   {
     label: 'Start your Fibermade shop',
     note: '$49/month · 30-day money-back guarantee',
+    waitlist: false,
   },
 )
 </script>
@@ -21,7 +23,7 @@ withDefaults(
         {{ body }}
       </p>
       <div class="mt-9 flex flex-col items-center gap-3.5">
-        <CtaButton variant="light">{{ label }}</CtaButton>
+        <CtaButton variant="light" :waitlist="waitlist">{{ label }}</CtaButton>
         <span class="text-[15px]/[1.6] text-terracotta-tint">{{ note }}</span>
       </div>
     </div>

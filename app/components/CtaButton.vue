@@ -6,9 +6,13 @@ withDefaults(
     variant?: 'primary' | 'light'
     /** Fills its container instead of hugging the label. */
     block?: boolean
+    /** Opens the waitlist modal instead of linking to `href`. */
+    waitlist?: boolean
   }>(),
-  { href: '#register', variant: 'primary', block: false },
+  { href: '#register', variant: 'primary', block: false, waitlist: false },
 )
+
+const { open } = useWaitlistModal()
 
 const base =
   'inline-flex h-14 items-center justify-center rounded-lg px-8 text-[17px] font-semibold whitespace-nowrap'
@@ -20,7 +24,15 @@ const variants = {
 </script>
 
 <template>
-  <a :href="href" :class="[base, variants[variant], block && 'flex w-full px-6']">
+  <button
+    v-if="waitlist"
+    type="button"
+    :class="[base, variants[variant], block && 'flex w-full px-6']"
+    @click="open()"
+  >
+    <slot />
+  </button>
+  <a v-else :href="href" :class="[base, variants[variant], block && 'flex w-full px-6']">
     <slot />
   </a>
 </template>
