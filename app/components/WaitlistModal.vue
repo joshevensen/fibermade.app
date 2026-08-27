@@ -96,11 +96,13 @@ function handleKeydown(event: KeyboardEvent) {
   }
 }
 
-watch(isOpen, (open) => {
+watch(isOpen, async (open) => {
   if (open) {
     resetForm()
     if (import.meta.client) {
       window.addEventListener('keydown', handleKeydown)
+      await nextTick()
+      document.getElementById('waitlist-first-name')?.focus()
     }
   } else if (import.meta.client) {
     window.removeEventListener('keydown', handleKeydown)
