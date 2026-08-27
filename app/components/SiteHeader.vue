@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const { comingSoon } = useLaunch()
+const { comingSoon, launchMonth } = useLaunch()
+
+const appUrl = useRuntimeConfig().public.appUrl as string
+const loginUrl = appUrl ? `${appUrl}/login` : null
+const registerUrl = appUrl ? `${appUrl}/register` : null
 
 const links = [
   { label: 'Home', to: '/' },
@@ -26,7 +30,7 @@ const navLinkClass =
       <div
         class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-6 py-2.5 text-center text-sm/6 text-stone-50 lg:px-8"
       >
-        <span class="font-semibold">Fibermade opens August 2026.</span>
+        <span class="font-semibold">Fibermade opens {{ launchMonth }}.</span>
         <span class="text-stone-300">
           Get on the launch list and be first to import your catalog.
         </span>
@@ -63,11 +67,16 @@ const navLinkClass =
         </div>
 
         <div class="flex items-center gap-4">
-          <a href="#login" :class="['hidden gap-2 whitespace-nowrap sm:inline-flex', navLinkClass]">
+          <a
+            v-if="loginUrl"
+            :href="loginUrl"
+            :class="['hidden gap-2 whitespace-nowrap sm:inline-flex', navLinkClass]"
+          >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
           <a
-            href="#register"
+            v-if="registerUrl"
+            :href="registerUrl"
             class="inline-flex h-9 items-center justify-center rounded-md bg-terracotta px-4 text-sm font-medium whitespace-nowrap text-stone-50 hover:bg-terracotta-dark"
           >
             Sign up
@@ -100,7 +109,8 @@ const navLinkClass =
             {{ link.label }}
           </NuxtLink>
           <a
-            href="#login"
+            v-if="loginUrl"
+            :href="loginUrl"
             class="rounded-md px-4 py-2 text-sm/6 font-semibold text-stone-900 hover:bg-stone-100 sm:hidden"
           >
             Log in <span aria-hidden="true">&rarr;</span>

@@ -19,9 +19,16 @@ static host. Nothing on the site needs a server at runtime.
 ## Launch day
 
 Pre-launch copy is behind one flag. With it on you get the dark announcement bar
-above the header, a "Launching August 2026" badge, and "Join the launch list"
+above the header, a "Launching September 2026" badge, and "Join the launch list"
 buttons with waitlist fine print. Turn it off and all of that reverts to the
 live wording — "Start your Fibermade shop" and the 30-day guarantee.
+
+The month itself ("September 2026") is `NUXT_PUBLIC_LAUNCH_MONTH`, so it can
+change without editing code:
+
+```bash
+NUXT_PUBLIC_LAUNCH_MONTH="October 2026" npm run generate
+```
 
 ```bash
 NUXT_PUBLIC_COMING_SOON=false npm run generate
@@ -42,6 +49,18 @@ The copy for both states lives in one place: `app/composables/useLaunch.ts`.
 Only the home page and the header swap copy — Features, Pricing, About, and
 FAQs use the live wording either way, since pre-launch their buttons point at
 the same `#waitlist` anchor.
+
+## Header Log in / Sign up links
+
+The header's Log in and Sign up links point at the app, not this site, so
+they're driven by `NUXT_PUBLIC_APP_URL` rather than a route. Set it to the
+app's base URL and the links appear, pointing at `{appUrl}/login` and
+`{appUrl}/register`; leave it unset and both links are hidden — useful for an
+environment (like production before launch) that doesn't have the app live yet.
+
+```bash
+NUXT_PUBLIC_APP_URL=https://app.staging.fibermade.app npm run generate
+```
 
 ## Imagery
 
