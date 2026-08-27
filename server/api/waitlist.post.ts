@@ -43,8 +43,10 @@ export default defineEventHandler(async (event) => {
     })
 
     if (!response.ok) {
-      const errorBody = await response.text().catch(() => '')
-      console.error('MailerLite subscriber request failed', response.status, errorBody)
+      // Log status only — MailerLite's response body can echo back the
+      // submitted email/name in its error text, and that's subscriber PII
+      // that shouldn't sit in server logs.
+      console.error('MailerLite subscriber request failed', response.status)
       setResponseStatus(event, 502)
       return { ok: false, error: 'Could not add you to the list right now.' }
     }
