@@ -3,5 +3,6 @@
     <SiteHeader />
     <slot />
     <SiteFooter />
+    <WaitlistModal />
   </div>
 </template>

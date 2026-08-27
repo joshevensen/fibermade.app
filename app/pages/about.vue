@@ -5,6 +5,8 @@ useSeoMeta({
     'Fibermade grew out of Bad Frog Yarn Co, a real hand-dyed yarn business — built by the person who needed it.',
 })
 
+const { ctaLabel, ctaNoteShort, comingSoon } = useLaunch()
+
 const origin = [
   {
     icon: 'heart-handshake',
@@ -109,6 +111,9 @@ const principles = [
     <CtaBand
       title="Try the tool"
       body="Use Fibermade for $49/month with the full platform available from day one and see what it feels like when one system understands yarn."
+      :label="ctaLabel"
+      :note="ctaNoteShort"
+      :waitlist="comingSoon"
     />
   </main>
 </template>
