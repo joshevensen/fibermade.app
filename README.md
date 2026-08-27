@@ -51,8 +51,10 @@ The copy for both states lives in one place: `app/composables/useLaunch.ts`.
 
 Every page's primary CTAs swap copy together — while `comingSoon` is true, all
 of them read "Join the launch list" and open the launch-list signup modal
-instead of linking anywhere; turn the flag off and they all revert to "Start
-your Fibermade shop" linking to the app's register endpoint.
+instead of linking anywhere; turn the flag off and they all revert to today's
+live wording, "Start your Fibermade shop" — still linking to the placeholder
+`#register` anchor (a pre-existing gap unrelated to this feature; see `.env.example`
+above for how `NUXT_PUBLIC_APP_URL` wires the header's own Log in/Sign up links).
 
 ## Header Log in / Sign up links
 

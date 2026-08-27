@@ -15,7 +15,13 @@ const status = ref<'idle' | 'submitting' | 'success'>('idle')
 
 const headingId = 'waitlist-modal-heading'
 
+// The modal stays mounted (only its v-if toggles), so a submit's response can
+// arrive after the user has closed and reopened it for an unrelated attempt.
+// Each open bumps this token; a response is only applied if it's still current.
+let submissionToken = 0
+
 function resetForm() {
+  submissionToken += 1
   firstName.value = ''
   email.value = ''
   businessName.value = ''
@@ -52,6 +58,7 @@ async function handleSubmit() {
   }
 
   status.value = 'submitting'
+  const token = submissionToken
 
   try {
     await $fetch('/api/waitlist', {
@@ -63,8 +70,10 @@ async function handleSubmit() {
       },
     })
 
+    if (token !== submissionToken) return
     status.value = 'success'
   } catch (error: any) {
+    if (token !== submissionToken) return
     status.value = 'idle'
 
     const data = error?.data
