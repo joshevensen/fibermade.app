@@ -22,6 +22,10 @@ export default defineNuxtConfig({
       // Renders the dashed "REPLACE — …" briefs over the stand-in imagery. Set
       // NUXT_PUBLIC_SHOW_PLACEHOLDERS=false once the real photography is in place.
       showPlaceholders: true,
+      // Base URL of the app (login/signup) for this environment, e.g.
+      // https://app.staging.fibermade.app. Set NUXT_PUBLIC_APP_URL to enable
+      // the header's Log in / Sign up links — leave unset and they stay hidden.
+      appUrl: '',
     },
   },
 

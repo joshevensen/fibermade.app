@@ -12,7 +12,7 @@ export function useLaunch() {
     comingSoon,
 
     badgeText: computed(() =>
-      comingSoon.value ? 'Launching August 2026' : 'Fibermade is live',
+      comingSoon.value ? 'Launching September 2026' : 'Fibermade is live',
     ),
 
     ctaLabel: computed(() =>
