@@ -173,8 +173,8 @@ const billingFaqs = [
     </FaqSection>
 
     <CtaBand
-      title="Try everything"
-      body="Import your catalog, open your shop, and decide with your real inventory, shows, and store relationships in front of you."
+      title="One plan, everything included"
+      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-store fees, and a 30-day refund issued automatically."
       :label="ctaLabel"
       :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"
