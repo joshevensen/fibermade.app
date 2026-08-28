@@ -147,10 +147,11 @@ const rest = [
         <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <PlaceholderImage
             class="order-2 lg:order-1"
-            src="/screenshots/bad-frog-storefront.png"
+            src="/screenshots/colorways-screenshot.png"
             alt="The Fibermade colorways screen"
             label="KEEP — COLORWAYS SCREEN"
             brief="This one is fine as a real product screenshot — just retake it with a full, photographed catalog rather than sparse seed data. Overlay is here only to mark it for a refresh."
+            :placeholder="false"
           />
           <div class="order-1 lg:order-2">
             <SectionHeader eyebrow="Fiber catalog" title="Colorways first">
@@ -197,10 +198,11 @@ const rest = [
             </dl>
           </div>
           <PlaceholderImage
-            src="/screenshots/bad-frog-storefront-hero.png"
-            alt="The Fibermade wholesale order detail screen"
+            src="/screenshots/wholesale-order-screenshot.png"
+            alt="The Fibermade wholesale order screen"
             label="REPLACE — WHOLESALE ORDER"
             brief="The wholesale order detail screen with a realistic order on it: a named store, several colorways and bases, quantities, the store's terms and discount visible, and a status. This is the screen that sells wholesale — a dashboard is too abstract."
+            :placeholder="false"
           />
         </div>
       </div>
