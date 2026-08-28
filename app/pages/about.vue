@@ -110,8 +110,8 @@ const principles = [
     </div>
 
     <CtaBand
-      title="Try the tool"
-      body="Use Fibermade for $49/month with the full platform available from day one and see what it feels like when one system understands yarn."
+      title="Built for the whole job"
+      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales, shaped around a real hand-dyed yarn business."
       :label="ctaLabel"
       :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"

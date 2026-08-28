@@ -162,8 +162,8 @@ const running = [
     </FaqSection>
 
     <CtaBand
-      title="See the fit"
-      body="Import your catalog, open your shop this afternoon, and judge it with your real inventory in front of you."
+      title="One system for the whole job"
+      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-sale fees."
       :label="ctaLabel"
       :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"
