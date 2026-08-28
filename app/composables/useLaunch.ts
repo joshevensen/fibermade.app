@@ -30,7 +30,7 @@ export function useLaunch() {
 
     ctaNoteShort: computed(() =>
       comingSoon.value
-        ? 'We will email you the day it opens. Nothing else.'
+        ? 'We will email you the day it opens.'
         : 'Cancel within 30 days and the refund is automatic.',
     ),
   }
