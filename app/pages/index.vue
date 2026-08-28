@@ -112,7 +112,7 @@ const origins = [
         <div class="flex w-full lg:ml-16 lg:min-w-[22rem] lg:flex-[1_1_30rem]">
           <div class="mt-14 w-full">
             <PlaceholderImage
-              src="/screenshots/bad-frog-storefront-hero.png"
+              src="/screenshots/bad-frog-storefront.png"
               alt="The Bad Frog Yarn Co storefront on desktop"
               label="REPLACE — HERO IMAGE"
               brief="A real Fibermade storefront on desktop — Bad Frog Yarn Co works. Big colorway photography above the fold, the shop's own logo and palette visible. This is the product promise; an admin dashboard is not."

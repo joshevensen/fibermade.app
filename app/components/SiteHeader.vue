@@ -50,12 +50,12 @@ const navLinkClass =
         class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-6 lg:px-8"
         aria-label="Global"
       >
-        <div class="flex items-center gap-12">
-          <NuxtLink to="/" class="-m-1.5 inline-flex items-center p-1.5">
-            <span class="sr-only">Fibermade</span>
-            <img src="/logo.png" alt="Fibermade" class="block h-8 w-auto" >
-          </NuxtLink>
+        <NuxtLink to="/" class="-m-1.5 inline-flex items-center p-1.5">
+          <span class="sr-only">Fibermade</span>
+          <img src="/logo.png" alt="Fibermade" class="block h-8 w-auto" >
+        </NuxtLink>
 
+        <div class="flex items-center gap-4">
           <div class="hidden gap-6 lg:flex">
             <NuxtLink
               v-for="link in links"
@@ -66,9 +66,6 @@ const navLinkClass =
               {{ link.label }}
             </NuxtLink>
           </div>
-        </div>
-
-        <div class="flex items-center gap-4">
           <a
             v-if="loginUrl"
             :href="loginUrl"
