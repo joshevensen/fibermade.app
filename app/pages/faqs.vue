@@ -162,7 +162,7 @@ const running = [
     </FaqSection>
 
     <CtaBand
-      title="One system for the whole job"
+      title="One system for the everything you do"
       body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-sale fees."
       :label="ctaLabel"
       :note="comingSoon ? ctaNoteShort : undefined"
