@@ -112,11 +112,12 @@ const origins = [
         <div class="flex w-full lg:ml-16 lg:min-w-[22rem] lg:flex-[1_1_30rem]">
           <div class="mt-14 w-full">
             <PlaceholderImage
-              src="/screenshots/fibermade-dashboard.png"
-              alt="A Fibermade storefront on desktop"
+              src="/screenshots/bad-frog-storefront-hero.png"
+              alt="The Bad Frog Yarn Co storefront on desktop"
               label="REPLACE — HERO IMAGE"
               brief="A real Fibermade storefront on desktop — Bad Frog Yarn Co works. Big colorway photography above the fold, the shop's own logo and palette visible. This is the product promise; an admin dashboard is not."
               :shadow="false"
+              :placeholder="false"
               cap-brief
             />
           </div>
@@ -205,10 +206,11 @@ const origins = [
             </ul>
           </div>
           <PlaceholderImage
-            src="/screenshots/fibermade-colorways.png"
-            alt="A Fibermade point of sale at a fiber festival booth"
+            src="/screenshots/bad-frog-booth.jpg"
+            alt="The Bad Frog Yarn Co booth at a fiber festival"
             label="REPLACE — BOOTH PHOTO"
             brief="A real booth at a fiber festival: skeins on display, the Square reader or the Fibermade POS screen in the frame, hands mid-transaction. Warm, candid, not staged product photography."
+            :placeholder="false"
           />
         </div>
       </div>
