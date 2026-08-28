@@ -119,6 +119,7 @@ const running = [
     </FaqSection>
 
     <!-- Video guides -->
+    <!--
     <section class="bg-stone-200 py-20 lg:py-24">
       <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:px-8">
         <div>
@@ -153,6 +154,7 @@ const running = [
         </a>
       </div>
     </section>
+    -->
 
     <FaqSection title="Running the business" :items="running">
       Inventory across channels, wholesale relationships, shows, and the spreadsheets this

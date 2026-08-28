@@ -80,10 +80,11 @@ const principles = [
           </div>
           <PlaceholderImage
             class="w-full self-start"
-            src="/screenshots/fibermade-colorways.png"
-            alt="The Bad Frog dye studio"
+            src="/screenshots/bad-frog-studio.jpg"
+            alt="The Bad Frog Yarn Co booth, showing the hand-dyed catalog"
             label="REPLACE — THE DYE STUDIO"
             brief="A real photo from the Bad Frog studio — dye pots, drying skeins, labeled bins, the actual mess of the work. On an About page, a product screenshot proves nothing; a photograph of the business the software came from proves everything."
+            :placeholder="false"
           />
         </div>
       </div>
