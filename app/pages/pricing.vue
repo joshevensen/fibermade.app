@@ -26,6 +26,12 @@ const otherCosts = [
     price: '$0/month',
   },
   {
+    icon: 'truck-delivery',
+    title: 'Postage on what you ship',
+    body: 'Buy shipping labels right inside Fibermade. You pay the postage on each label you buy, and Fibermade adds nothing on top.',
+    price: 'Per label',
+  },
+  {
     icon: 'device-mobile',
     title: 'A card reader, if you do shows',
     body: "Square's magstripe reader is free. Most dyers buy the $59 tap-and-chip reader; the $399 standalone terminal works without a phone. One-time, not a subscription.",
@@ -59,6 +65,11 @@ const billingFaqs = [
     question: 'Do you take a cut of my sales?',
     answer:
       'No. $49 is the whole bill from us — no revenue share, no per-store fees, no feature gates. Square charges its own processing rate on cards, the same as it would anywhere else.',
+  },
+  {
+    question: 'Are there any other fees?',
+    answer:
+      "Not from Fibermade. The only other costs are Square's processing fees on card payments and the postage on shipping labels you buy for your orders.",
   },
   {
     question: 'Does Fibermade handle wholesale payments?',
@@ -140,11 +151,11 @@ const billingFaqs = [
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-2xl">
           <SectionHeader eyebrow="The honest math" title="What else it costs">
-            Fibermade takes nothing from your sales, but payments have to go somewhere.
-            Here is everything outside the $49 so there are no surprises.
+            Fibermade has no extra charges, but card payments and postage still cost
+            something. Here is everything outside the $49 so there are no surprises.
           </SectionHeader>
         </div>
-        <div class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div
             v-for="cost in otherCosts"
             :key="cost.title"
