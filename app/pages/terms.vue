@@ -7,14 +7,14 @@ useSeoMeta({
 
 <template>
   <main>
-    <LegalDocument title="Terms of Service" updated="February 16, 2026">
+    <LegalDocument title="Terms of Service" updated="October 10, 2026">
       <section>
         <h2>The short version</h2>
         <p>
           Fibermade is a paid commerce platform for fiber businesses — your shop, catalog,
           inventory, wholesale, and in-person sales. You pay a monthly subscription. You own
-          your data. You can cancel anytime. If you cancel within the first 30 days, you get
-          a full refund. We don't sell your information to anyone.
+          your data. You can cancel anytime. New accounts start with a 30-day free trial, and
+          if you cancel before it ends you're never charged. We don't sell your information to anyone.
         </p>
       </section>
 
@@ -46,24 +46,28 @@ useSeoMeta({
       <section>
         <h2>Pricing and payment</h2>
         <ul>
-          <li>Fibermade costs <strong>$49 per month</strong>, billed monthly through Stripe.</li>
+          <li>Fibermade costs <strong>$49 per month</strong>, billed monthly through Stripe after a
+            30-day free trial.</li>
           <li>There are no tiers, no per-store fees, and no hidden costs.</li>
           <li>
             Prices may change, but we'll give you at least 30 days' notice before any price
             increase takes effect.
           </li>
           <li>
-            All fees are in US dollars and are non-refundable, except as described below.
+            All fees are in US dollars and are non-refundable.
           </li>
         </ul>
       </section>
 
       <section>
-        <h2>30-day money-back guarantee</h2>
+        <h2>30-day free trial</h2>
         <p>
-          If you cancel within 30 days of your first payment, we'll refund you in full — no
-          questions asked. We want you to have enough time to actually use the wholesale
-          features before deciding.
+          New accounts get the full product free for 30 days. A payment card is required to
+          start the trial, and your first $49 charge happens automatically when it ends. Cancel
+          anytime before then and you won't be charged. If the trial ends without an active
+          subscription, your account becomes read-only — you can still log in and export your
+          data. We want you to have enough time to actually use the wholesale features before
+          deciding.
         </p>
       </section>
 

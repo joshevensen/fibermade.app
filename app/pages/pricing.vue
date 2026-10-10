@@ -4,7 +4,7 @@ const { ctaLabel, ctaNoteShort, comingSoon } = useLaunch()
 useSeoMeta({
   title: 'Pricing — Fibermade',
   description:
-    'One plan at $49 a month for the whole platform. No tiers, no per-store fees, no cut of your sales, and a 30-day refund issued automatically.',
+    'One plan at $49 a month for the whole platform. No tiers, no per-store fees, no cut of your sales, and a 30-day free trial.',
 })
 
 const included = [
@@ -41,9 +41,9 @@ const otherCosts = [
 
 const billingFaqs = [
   {
-    question: 'Why a refund instead of a free trial?',
+    question: 'How does the free trial work?',
     answer:
-      'Fibermade only shows its value once your real catalog and inventory are in it, and that is not something to do twice. So you get the full product from day one, and 30 days to decide. Cancel in that window and the refund is automatic — no email, no explanation.',
+      'You get the full product free for 30 days. A card is required to start, and your first $49 charge happens when the trial ends. Cancel any time before then and you are never charged — no email, no explanation.',
   },
   {
     question: 'Can I cancel anytime?',
@@ -77,7 +77,7 @@ const billingFaqs = [
   <main>
     <PageHero eyebrow="Pricing" title="$49 a month">
       One plan, the whole platform. No tiers, no per-store fees, no cut of your sales, and
-      a 30-day refund issued automatically if it is not the right fit.
+      a 30-day free trial to see if it is the right fit.
     </PageHero>
 
     <!-- The plan -->
@@ -126,7 +126,7 @@ const billingFaqs = [
                 </p>
                 <CtaButton class="mt-8" block :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
                 <p class="mt-3.5 text-center text-[15px]/[1.5] text-stone-600">
-                  {{ comingSoon ? ctaNoteShort : 'Cancel within 30 days for a full refund.' }}
+                  {{ comingSoon ? ctaNoteShort : 'Free for 30 days. Cancel before then and pay nothing.' }}
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ const billingFaqs = [
 
     <CtaBand
       title="One plan, everything included"
-      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-store fees, and a 30-day refund issued automatically."
+      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-store fees, and a 30-day free trial."
       :label="ctaLabel"
       :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"

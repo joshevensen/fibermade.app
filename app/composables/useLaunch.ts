@@ -25,13 +25,13 @@ export function useLaunch() {
     ctaNote: computed(() =>
       comingSoon.value
         ? '$49/month when we open · no fees on your sales · be first to import your catalog'
-        : '$49/month · 30-day money-back guarantee · no fees on your sales',
+        : '30-day free trial, then $49/month · no fees on your sales',
     ),
 
     ctaNoteShort: computed(() =>
       comingSoon.value
         ? 'We will email you the day it opens.'
-        : 'Cancel within 30 days and the refund is automatic.',
+        : 'Cancel before day 30 and you are never charged.',
     ),
   }
 }

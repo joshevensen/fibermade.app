@@ -103,7 +103,7 @@ const rest = [
       <template #cta>
         <CtaButton :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
         <span class="text-[15px]/[1.6] text-stone-500">
-          $49/month · 30-day money-back guarantee
+          30-day free trial, then $49/month
         </span>
       </template>
     </PageHero>
@@ -242,7 +242,7 @@ const rest = [
       title="Work in fiber language"
       body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales."
       :label="ctaLabel"
-      :note="comingSoon ? ctaNoteShort : '30-day money-back guarantee, issued automatically.'"
+      :note="comingSoon ? ctaNoteShort : 'Try it free for 30 days. Cancel anytime before then and you are never charged.'"
       :waitlist="comingSoon"
     />
   </main>
