@@ -4,7 +4,7 @@ const { ctaLabel, ctaNoteShort, comingSoon } = useLaunch()
 useSeoMeta({
   title: 'Pricing — Fibermade',
   description:
-    'One plan at $49 a month for the whole platform. No tiers, no per-store fees, no cut of your sales, and a 30-day refund issued automatically.',
+    'One plan at $49 a month for the whole platform. No tiers, no per-store fees, no cut of your sales, and a 30-day free trial.',
 })
 
 const included = [
@@ -26,6 +26,12 @@ const otherCosts = [
     price: '$0/month',
   },
   {
+    icon: 'truck-delivery',
+    title: 'Postage on what you ship',
+    body: 'Buy shipping labels right inside Fibermade. You pay the postage on each label you buy, and Fibermade adds nothing on top.',
+    price: 'Per label',
+  },
+  {
     icon: 'device-mobile',
     title: 'A card reader, if you do shows',
     body: "Square's magstripe reader is free. Most dyers buy the $59 tap-and-chip reader; the $399 standalone terminal works without a phone. One-time, not a subscription.",
@@ -41,9 +47,9 @@ const otherCosts = [
 
 const billingFaqs = [
   {
-    question: 'Why a refund instead of a free trial?',
+    question: 'How does the free trial work?',
     answer:
-      'Fibermade only shows its value once your real catalog and inventory are in it, and that is not something to do twice. So you get the full product from day one, and 30 days to decide. Cancel in that window and the refund is automatic — no email, no explanation.',
+      'You get the full product free for 30 days. A card is required to start, and your first $49 charge happens when the trial ends. Cancel any time before then and you are never charged — no email, no explanation.',
   },
   {
     question: 'Can I cancel anytime?',
@@ -59,6 +65,11 @@ const billingFaqs = [
     question: 'Do you take a cut of my sales?',
     answer:
       'No. $49 is the whole bill from us — no revenue share, no per-store fees, no feature gates. Square charges its own processing rate on cards, the same as it would anywhere else.',
+  },
+  {
+    question: 'Are there any other fees?',
+    answer:
+      "Not from Fibermade. The only other costs are Square's processing fees on card payments and the postage on shipping labels you buy for your orders.",
   },
   {
     question: 'Does Fibermade handle wholesale payments?',
@@ -77,7 +88,7 @@ const billingFaqs = [
   <main>
     <PageHero eyebrow="Pricing" title="$49 a month">
       One plan, the whole platform. No tiers, no per-store fees, no cut of your sales, and
-      a 30-day refund issued automatically if it is not the right fit.
+      a 30-day free trial to see if it is the right fit.
     </PageHero>
 
     <!-- The plan -->
@@ -126,7 +137,7 @@ const billingFaqs = [
                 </p>
                 <CtaButton class="mt-8" block :waitlist="comingSoon">{{ ctaLabel }}</CtaButton>
                 <p class="mt-3.5 text-center text-[15px]/[1.5] text-stone-600">
-                  {{ comingSoon ? ctaNoteShort : 'Cancel within 30 days for a full refund.' }}
+                  {{ comingSoon ? ctaNoteShort : 'Free for 30 days. Cancel before then and pay nothing.' }}
                 </p>
               </div>
             </div>
@@ -140,11 +151,11 @@ const billingFaqs = [
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="max-w-2xl">
           <SectionHeader eyebrow="The honest math" title="What else it costs">
-            Fibermade takes nothing from your sales, but payments have to go somewhere.
-            Here is everything outside the $49 so there are no surprises.
+            Fibermade has no extra charges, but card payments and postage still cost
+            something. Here is everything outside the $49 so there are no surprises.
           </SectionHeader>
         </div>
-        <div class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div
             v-for="cost in otherCosts"
             :key="cost.title"
@@ -174,7 +185,7 @@ const billingFaqs = [
 
     <CtaBand
       title="One plan, everything included"
-      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-store fees, and a 30-day refund issued automatically."
+      body="$49/month for the whole platform — catalog, storefront, inventory, wholesale, shows, and in-person sales. No tiers, no per-store fees, and a 30-day free trial."
       :label="ctaLabel"
       :note="comingSoon ? ctaNoteShort : undefined"
       :waitlist="comingSoon"

@@ -9,7 +9,7 @@ withDefaults(
   }>(),
   {
     label: 'Start your Fibermade shop',
-    note: '$49/month · 30-day money-back guarantee',
+    note: '30-day free trial, then $49/month',
     waitlist: false,
   },
 )

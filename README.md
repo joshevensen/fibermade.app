@@ -24,7 +24,7 @@ sufficient once the launch-list signup feature is live.
 Pre-launch copy is behind one flag. With it on you get the dark announcement bar
 above the header, a "Launching September 2026" badge, and "Join the launch list"
 buttons with waitlist fine print. Turn it off and all of that reverts to the
-live wording — "Start your Fibermade shop" and the 30-day guarantee.
+live wording — "Start your Fibermade shop" and the 30-day free trial.
 
 The month itself ("September 2026") is `NUXT_PUBLIC_LAUNCH_MONTH`, so it can
 change without editing code:

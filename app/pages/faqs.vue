@@ -57,6 +57,11 @@ const payments = [
       "Square's standard processing rates on cards, paid to Square, with payouts straight to your bank. Fibermade takes no percentage of your sales on top of that.",
   },
   {
+    question: 'Are there any other fees?',
+    answer:
+      "Not from Fibermade. The only other costs are Square's processing fees on card payments and the postage on shipping labels you buy for your orders.",
+  },
+  {
     question: 'Does Fibermade handle wholesale payments?',
     answer:
       'No. Fibermade tracks wholesale orders, terms, and status, while payment continues through whatever arrangement you already have with each store.',
