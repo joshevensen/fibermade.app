@@ -11,8 +11,9 @@ useSeoMeta({
       <section>
         <h2>The short version</h2>
         <p>
-          We collect only what we need to run and improve Fibermade. We don't sell your data to anyone —
-          ever. We don't track you across the web. We use cookies only to keep you logged in.
+          We collect only what we need to run and improve Fibermade. We don't sell your data
+          to anyone — ever. We don't track you across the web. We use cookies only to keep you
+          logged in.
         </p>
       </section>
 
