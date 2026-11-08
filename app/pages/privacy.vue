@@ -7,11 +7,11 @@ useSeoMeta({
 
 <template>
   <main>
-    <LegalDocument title="Privacy Policy" updated="February 16, 2026">
+    <LegalDocument title="Privacy Policy" updated="November 8, 2026">
       <section>
         <h2>The short version</h2>
         <p>
-          We collect only what we need to run Fibermade. We don't sell your data to anyone —
+          We collect only what we need to run and improve Fibermade. We don't sell your data to anyone —
           ever. We don't track you across the web. We use cookies only to keep you logged in.
         </p>
       </section>
@@ -68,6 +68,28 @@ useSeoMeta({
             — to publish and run your public shop.
           </li>
         </ul>
+        <h3>When you import your website</h3>
+        <p>
+          <strong>Website import during onboarding.</strong> When you give us your website
+          address during creator onboarding, we read the public pages of that site to pre-fill
+          your Fibermade store. We keep a record of each import run linked to your account. It
+          includes the content we extracted (for example your business name, contact details,
+          about text, shows, stockists, colors and images), technical details of the run, and
+          the changes you made when you accepted, edited or rejected each suggestion. We use
+          this record to operate and improve the import. It is kept until your account is
+          deleted, at which point it is deleted with it.
+        </p>
+        <p>
+          <strong>Anonymized trend data.</strong> From each import run we also derive a
+          separate, anonymized trend record. It contains only structured categories and
+          numbers: the hosting platform, which kinds of pages were found, how often suggestions
+          were accepted, edited or rejected, broad color and mood categories, whether AI
+          processing succeeded, and timings rounded to whole seconds, dated only to the month.
+          It contains no account or creator identifier, website address, business name, email
+          address, phone number, postal address or any free text from your site. Because it
+          contains no identifiers, this trend data is kept after your account is deleted and is
+          used only in aggregate to understand and improve how website imports work.
+        </p>
         <h3>Payment information</h3>
         <p>
           We use <strong>Stripe</strong> to process payments. Your credit card number goes
@@ -112,6 +134,12 @@ useSeoMeta({
             your gift cards, and your in-person sales when you connect your account. Square
             has its own
             <a href="https://squareup.com/legal/privacy" target="_blank" rel="noopener">privacy policy</a>.
+          </li>
+          <li>
+            <strong>Anthropic</strong> — provides the AI models (Claude) we use to read the
+            public pages of your website and extract your store details during onboarding. It
+            receives your website's public page content for that purpose. Anthropic has its own
+            <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">privacy policy</a>.
           </li>
         </ul>
         <p>
@@ -158,7 +186,8 @@ useSeoMeta({
           <li>
             <strong>Deleted accounts</strong> — when you request account deletion, we remove
             your personal data within 30 days. Some data may persist in encrypted backups for
-            up to 90 days.
+            up to 90 days. Anonymized trend data from website imports, which holds no personal
+            data, is kept.
           </li>
         </ul>
       </section>
@@ -169,7 +198,8 @@ useSeoMeta({
         <ul>
           <li>
             <strong>Access your data</strong> — everything you put into Fibermade is visible
-            in your account.
+            in your account. Anything else we hold about you, like website import records, is
+            available on request.
           </li>
           <li>
             <strong>Update your data</strong> — edit your profile and business details anytime
@@ -209,7 +239,8 @@ useSeoMeta({
           </li>
           <li>
             <strong>To run the service</strong> — our payment processor (Stripe) needs billing
-            details to charge your subscription.
+            details to charge your subscription, and our AI provider (Anthropic) processes your
+            website's public page content during import.
           </li>
           <li>
             <strong>If legally required</strong> — we'll comply with valid legal processes like
