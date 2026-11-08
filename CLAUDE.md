@@ -17,3 +17,10 @@ already type-checks the whole project in one pass (TypeScript/vue-tsc has no
 narrower per-file mode worth scoping to), so there is no smaller focused
 command. Run the same two commands above after each wave; there is nothing to
 filter down to.
+
+## Branch Naming
+
+Always use orc's branch name for issue work: `issue/{number}-{slug}`, as
+`/orc:build` creates it. This overrides any session-assigned branch (such as a
+`claude/…` branch from a cloud session) — build, commit, and push on the orc
+branch instead.
